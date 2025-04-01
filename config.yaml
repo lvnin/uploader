@@ -1,0 +1,108 @@
+# system configuration
+system:
+  addr: 8888
+  db-type: mysql
+  oss-type: aliyun-oss
+  use-multipoint: false
+  locale: zh_CN
+  temporary-path: you-temporary-path
+
+# jwt configuration
+jwt:
+  signing-key: _5#y2LF4Q8nxzec]/
+  expires-time: 7d
+  buffer-time: 1d
+  issuer: jwtPlus
+
+# zap logger configuration
+zap:
+  level: info
+  format: console
+  prefix: "[uploader]"
+  director: log
+  show-line: true
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: true
+
+# mysql connect configuration
+mysql:
+  path: 127.0.0.1
+  port: 3306
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db-name: your-db-name
+  username: your-username
+  password: your-password
+  max-idle-conns: 5
+  max-open-conns: 10
+  log-mode: error
+  log-zap: false
+
+# local configuration
+local:
+  path: 127.0.0.1
+  store-path: you-store-path
+
+# qiniu configuration
+qiniu:
+  zone: your-zone
+  bucket: your-bucket
+  img-path: your-img-path
+  use-https: false
+  access-key: your-access-key
+  secret-key: your-secret-key
+  use-cdn-domains: false
+
+# aliyun oss configuration
+aliyun-oss:
+  bucket:
+    endpoint: you-endpoint
+    access-key-id: you-access-key-id
+    access-key-secret: you-access-key-secret
+    bucket-name: you-bucket-name
+    bucket-url: you-bucket-url
+    base-path: uploads
+  green:
+    access-key: you-access-key
+    access-key-secret: you-access-key-secret
+    region: you-region
+    endpoint: you-endpoint
+    spare-region: you-spare-region
+    spare-endpoint: you-spare-endpoint
+    service: you-service
+    connect-timeout: 3000
+    read-timeout: 6000
+    error-image-path: you-error-image-url
+    score: 0.0
+    scenes: # 检测场景porn：图片智能鉴黄 terrorism：图片暴恐涉政 ad：图文违规 qrcode：图片二维码 live：图片不良场景 logo：图片logo
+      - porn
+      - terrorism
+
+# tencent cos configuration
+tencent-cos:
+  bucket: your-bucket
+  region: your-region
+  secret-id: your-secret-id
+  secret-key: your-secret-key
+  base-url: your-base-url
+  path-prefix: your-path-prefix
+
+# aws s3 configuration (minio compatible)
+aws-s3:
+  bucket: your-bucket
+  region: your-region
+  endpoint: ""
+  s3-force-path-style: false
+  disable-ssl: false
+  secret-id: your-secret-id
+  secret-key: your-secret-key
+  base-url: your-base-url
+  path-prefix: your-path-prefix
+
+# huawei obs configuration
+hua-wei-obs:
+  path: you-path
+  bucket: you-bucket
+  endpoint: you-endpoint
+  access-key: you-access-key
+  secret-key: you-secret-key
